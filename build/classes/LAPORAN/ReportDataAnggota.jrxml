@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="55d7bbaf-0fc3-4dde-a939-0056ceec47eb">
-	<property name="ireport.zoom" value="1.2100000000000093"/>
+	<property name="ireport.zoom" value="1.9487171000000156"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="125"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT
      anggota.`id_anggota` AS anggota_id_anggota,
@@ -30,7 +30,6 @@ FROM
 	<field name="anggota_alamat" class="java.lang.String"/>
 	<field name="anggota_telepon" class="java.lang.String"/>
 	<field name="anggota_create_date" class="java.sql.Date"/>
-        <field name="date" class="java.sql.Date"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -41,7 +40,7 @@ FROM
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="15" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Laporan Data Anggota Koperasi]]></text>
+				<text><![CDATA[Laporan Data Anggota]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -171,7 +170,7 @@ FROM
 			<textField>
 				<reportElement x="170" y="1" width="71" height="18" uuid="d2c46045-20d7-4d65-a275-62cdf0dabfd9"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[ new Date()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{anggota_tgl_lhr}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="245" y="0" width="70" height="20" uuid="b867b4e5-49e6-401e-877f-1629b00aef5a"/>
@@ -198,20 +197,32 @@ FROM
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{anggota_no_ktp}]]></textFieldExpression>
 			</textField>
-                     </band>
-                     
-                     
-                  <staticText>
-				<reportElement x="510" y="53" width="250" height="26" uuid="4a6b8974-1aa0-4d40-a284-af449d5d9be0"/>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="15" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Jakarta , 25 Februari 2019]]></text>
-			</staticText>
-                        
+		</band>
 	</detail>
-       <columnFooter>
-		<band height="45" splitType="Stretch"/> 
+	<columnFooter>
+		<band height="121" splitType="Stretch">
+			<staticText>
+				<reportElement x="365" y="19" width="38" height="16" uuid="e7b198aa-59f0-4423-bceb-fb578c24f9b2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="403" y="19" width="152" height="16" uuid="35d474dc-18d5-4b9e-8d55-8638578ad4dc"/>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="349" y="39" width="206" height="20" uuid="808eb42c-7aed-4d48-b157-a75f4b7592e0"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Kepala Administrasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="101" width="206" height="20" uuid="2b661e30-359d-4718-84a8-0c562d4eb1f1"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Setyoko,S.Pd]]></text>
+			</staticText>
+		</band>
 	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch"/>

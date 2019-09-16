@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0f7d5b2a-ff73-45ab-941f-865c3c7b0877">
-	<property name="ireport.zoom" value="1.2100000000000184"/>
+	<property name="ireport.zoom" value="1.610510000000025"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="100"/>
+	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -175,7 +175,29 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="63" splitType="Stretch"/>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="349" y="97" width="206" height="20" uuid="819bccd0-99e1-435f-91cd-b7e52305b36c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Setyoko,S.Pd]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="403" y="15" width="152" height="16" uuid="9052face-b5a5-4a6c-85c4-b90d51ba91a5"/>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="349" y="35" width="206" height="20" uuid="f19b2aa2-bcd1-47b0-ae9c-5699a28a6ec4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Kepala Administrasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="15" width="38" height="16" uuid="490306c3-70c4-4238-ba87-24cf7f0bbc0b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+		</band>
 	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch"/>
